@@ -1,0 +1,43 @@
+﻿@page
+@model Application.Pages.Account.SignIn.Index
+<h1>@Localizer["heading"]</h1>
+<p>@Localizer["information"]</p>
+<ul class="list-group">
+	<li class="border-1 list-group-item list-group-item-action mb-2 p-0 rounded-2">
+		<a asp-route-idp="true" asp-route-returnUrl="@Model.ReturnUrl" class="d-block p-3 text-decoration-none" title="@Localizer["idp/information"]">
+			<h2 class="h6 m-0">
+				<svg height="1.4rem" role="presentation" width="1.4rem">
+					<use xlink:href="/Style/Sprites/sprite.svg#duende" />
+				</svg>
+				<span class="fw-light">@Localizer["sign-in-with"]</span> <strong>@Localizer["idp/heading"]</strong>
+			</h2>
+		</a>
+	</li>
+	<li class="border-1 list-group-item mb-2 p-3 rounded-2">
+		<h2 class="h5">@Localizer["form/heading"]</h2>
+		<p>@Localizer["form/information"]</p>
+		@if(!ViewContext.ModelState.IsValid)
+		{
+			<div class="alert alert-danger">
+				<div asp-validation-summary="All" class="alert-body validation-summary">
+					<h3 class="h6">@Localizer[":pages.shared.validationsummary.heading"]</h3>
+					<p class="m-0">@Localizer[":pages.shared.validationsummary.information"]</p>
+				</div>
+			</div>
+		}
+		<form class="bg-light card p-3" method="post">
+			<input asp-for="ReturnUrl" type="hidden" />
+			<div class="mb-3">
+				<label for="username-input">@Localizer["form/username"]</label>
+				<input class="form-control" id="username-input" name="UserName" required="required" type="text" value="@Model.UserName" />
+			</div>
+			<div class="mb-3">
+				<label for="password-input">@Localizer["form/password"]</label>
+				<input autocomplete="off" class="form-control" id="password-input" name="Password" required="required" type="password" />
+			</div>
+			<div class="text-end">
+				<button class="btn btn-primary">@Localizer["heading"]</button>
+			</div>
+		</form>
+	</li>
+</ul>

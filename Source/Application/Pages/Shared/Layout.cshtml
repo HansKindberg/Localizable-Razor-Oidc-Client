@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentUICulture">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>@ViewData[SitePageModel.ViewDataTitleKey]</title>
+		<link asp-append-version="true" href="~/Style/site.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="bg-white border-bottom border-4 border-success fixed-top">
+			<nav class="navbar navbar-expand-md pb-0">
+				<div class="container-md">
+					<div class="mb-2 text-nowrap">
+						<a asp-page="/Index" class="navbar-brand" title="@Localizer["home"]">
+							<img alt="@Localizer["logotype"]" height="40" src="/Style/Images/logo.png" width="40" />
+							<span class="align-middle h1 m-0 me-1">@Localizer["site-name"]</span>
+						</a>
+					</div>
+					<button aria-controls="navigation" aria-expanded="false" aria-label="@Localizer["toggle-navigation"]" class="navbar-toggler mb-2" data-bs-target="#navigation" data-bs-toggle="collapse" type="button">
+						<svg height="1.4rem" role="presentation" width="1.4rem">
+							<use xlink:href="/Style/Sprites/sprite.svg#list" />
+						</svg>
+					</button>
+					<div class="collapse navbar-collapse mb-1" id="navigation">
+						<ul class="navbar-nav ms-auto">
+							@if(User.Identity!.IsAuthenticated)
+							{
+								<li class="dropdown nav-item">
+									<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" id="identity-dropdown">
+										<svg class="align-bottom text-primary" height="1.6rem" role="presentation" width="1.6rem">
+											<use xlink:href="/Style/Sprites/sprite.svg#person" />
+										</svg>
+										@User.Identity?.Name
+									</a>
+									<div aria-labelledby="identity-dropdown" class="dropdown-menu dropdown-menu-end">
+										<a asp-page="/Account/Index" class="dropdown-item@(Context.IsActivePage("/Account/Index") ? " active" : null)">@Localizer["your-identity"]</a>
+										@if(ViewContext.SignOutAvailable())
+										{
+											<a asp-page="/Account/SignOut/Index" asp-route-returnUrl="@Context.Request.GetEncodedPathAndQuery()" class="dropdown-item@(Context.IsActivePage("/Account/SignOut/Index") ? " active" : null)">@Localizer["sign-out"]</a>
+										}
+										<a asp-page="/Account/Users/Index" class="dropdown-item@(Context.IsActivePage("/Account/Users/Index") ? " active" : null)">@Localizer["users"]</a>
+									</div>
+								</li>
+							}
+							else if(ViewContext.SignInAvailable())
+							{
+								<li class="nav-item">
+									<a class="nav-link" asp-page="/Account/SignIn/Index" asp-route-returnUrl="@Context.Request.GetEncodedPathAndQuery()">
+										<svg class="align-bottom text-primary" height="1.6rem" role="presentation" width="1.6rem">
+											<use xlink:href="/Style/Sprites/sprite.svg#person" />
+										</svg>
+										@Localizer["sign-in"]
+									</a>
+								</li>
+							}
+							@{
+								var cultureSelector = Url.CreateCultureSelector();
+							}
+							<li class="dropdown nav-item">
+								<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" href="#" id="culture-selector" title="@Localizer["select-culture"]">
+									<svg class="align-bottom text-primary" height="1.6rem" role="presentation" width="1.6rem">
+										<use xlink:href="/Style/Sprites/sprite.svg#globe" />
+									</svg>
+									@cultureSelector.Selected.Text
+								</a>
+								<div aria-labelledby="culture-selector" class="dropdown-menu dropdown-menu-end">
+									@foreach(var item in cultureSelector.List)
+									{
+										<a class="dropdown-item@(item.Selected ? " active" : null)" href="@item.Value">@item.Text</a>
+									}
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main class="container-md mb-4" role="main">
+			@RenderBody()
+		</main>
+		<script asp-append-version="true" src="~/Scripts/site.js"></script>
+	</body>
+</html>

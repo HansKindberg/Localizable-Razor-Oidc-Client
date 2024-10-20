@@ -1,0 +1,50 @@
+﻿@page
+@model Application.Pages.Account.Users.Index
+<h1>@Localizer["heading"]</h1>
+<p>@Localizer["information"]</p>
+<form class="bg-light card p-3 mb-2" method="get">
+	<div class="mb-3">
+		<label for="username-input">@Localizer["user/userName"]</label>
+		<input class="form-control" id="username-input" name="UserName" type="text" value="@Model.UserName" />
+	</div>
+	<div class="text-end">
+		<button autofocus="autofocus" class="btn btn-primary" name="Search" value="true">@Localizer["search"]</button>
+		<a asp-page="/Account/Users/Index" class="btn btn-secondary">@Localizer["reset"]</a>
+	</div>
+</form>
+@if(Model.Search)
+{
+	if(Model.Users != null && Model.Users.Any())
+	{
+		<h2>@Localizer["result"]</h2>
+		<table class="table table-dark table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">@Localizer["user/userName"]</th>
+					<th scope="col">@Localizer["user/subject"]</th>
+					<th scope="col">@Localizer["user/preferred-userName"]</th>
+					<th scope="col">@Localizer["user/email"]</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for(var i = 0; i < Model.Users.Count; i++)
+				{
+					<tr>
+						<th scope="row">@i</th>
+						<td>@Model.Users[i].UserName</td>
+						<td>@Model.Users[i].Subject</td>
+						<td>@Model.Users[i].PreferredUserName</td>
+						<td>@Model.Users[i].Email</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<div class="alert alert-warning">
+			@Localizer["no-hit"]
+		</div>
+	}
+}

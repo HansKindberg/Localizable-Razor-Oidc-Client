@@ -1,0 +1,10 @@
+﻿@page
+@model Application.Pages.Account.SignOut.Index
+<h1>@Localizer["heading"]</h1>
+<form class="bg-light card p-3" method="post">
+	<input asp-for="ReturnUrl" type="hidden" />
+	<p>@Localizer["confirm-question"]</p>
+	<div class="text-end">
+		<button autofocus="autofocus" class="btn btn-primary">@Localizer["confirm"]</button>
+	</div>
+</form>

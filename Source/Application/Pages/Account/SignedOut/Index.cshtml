@@ -1,0 +1,10 @@
+﻿@page
+@model Application.Pages.Account.SignedOut.Index
+<h1>@Localizer["heading"]</h1>
+<p>@Localizer["information"]</p>
+@if(Model.ReturnUrl != null)
+{
+	<p>
+		<a href="@Model.ReturnUrl">@Localizer["return-to-previous-page"]</a>
+	</p>
+}

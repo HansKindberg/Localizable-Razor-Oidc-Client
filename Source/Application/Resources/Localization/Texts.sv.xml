@@ -1,0 +1,111 @@
+<cultures>
+	<culture name="sv">
+		<common>
+			<culture>Kultur</culture>
+			<sign-in>Logga in</sign-in>
+			<sign-out>Logga ut</sign-out>
+			<signing-in-with>Inloggning med</signing-in-with>
+			<site-name>Applikation</site-name>
+			<ui-culture>UI-kultur</ui-culture>
+			<users>Användare</users>
+			<your-identity>Din identitet</your-identity>
+		</common>
+		<pages>
+			<account>
+				<accessDenied>
+					<index>
+						<heading>Behörighet saknas</heading>
+						<information>Du saknar behörighet till den resurs du försöker nå.</information>
+						<title lookup="pages.account.accessdenied.index.heading" />
+					</index>
+				</accessDenied>
+				<index>
+					<claims>Egenskaper</claims>
+					<heading lookup="common.your-identity" />
+					<properties>Övrigt</properties>
+					<title lookup="common.your-identity" />
+					<user-name>Användar-namn</user-name>
+				</index>
+				<signedOut>
+					<index>
+						<heading>Utloggad</heading>
+						<information>Du är nu utloggad.</information>
+						<return-to-previous-page>Återgå till föregående sida.</return-to-previous-page>
+						<title lookup="pages.account.signedout.index.heading" />
+					</index>
+				</signedOut>
+				<signIn>
+					<index>
+						<form>
+							<error>
+								<invalid-credentials>&quot;{0}&quot; eller/och &quot;{1}&quot; är felaktigt.</invalid-credentials>
+								<required-format>&quot;{0}&quot; är obligatoriskt.</required-format>
+							</error>
+							<heading>Formulär-påloggning</heading>
+							<information>Logga in med användarnamn och lösenord.</information>
+							<password>Lösenord</password>
+							<username>Användarnamn</username>
+						</form>
+						<heading>Logga in</heading>
+						<idp>
+							<heading>Duende IdentityServer demo</heading>
+							<information>Logga in med Duende IdentityServer demo.</information>
+						</idp>
+						<information>Välj något av följande alternativ:</information>
+						<sign-in-with>Logga in med</sign-in-with>
+						<title lookup="pages.account.signin.index.heading" />
+					</index>
+				</signIn>
+				<signOut>
+					<index>
+						<confirm>Ja</confirm>
+						<confirm-question>Vill du logga ut?</confirm-question>
+						<heading lookup="common.sign-out" />
+						<title lookup="common.sign-out" />
+					</index>
+				</signOut>
+				<users>
+					<index>
+						<heading lookup="common.users" />
+						<information>Sök efter användare. Du kan använda &quot;*&quot; som jokertecken när du söker.</information>
+						<no-hit>Ingen träff.</no-hit>
+						<reset>Rensa</reset>
+						<result>Resultat</result>
+						<search>Sök</search>
+						<title lookup="common.users" />
+						<user>
+							<email>E-post</email>
+							<preferred-userName>Föredraget användar-namn</preferred-userName>
+							<subject>Subjekt (id)</subject>
+							<userName>Användar-namn</userName>
+						</user>
+					</index>
+				</users>
+			</account>
+			<index>
+				<culture lookup="common.culture" />
+				<heading>Hem</heading>
+				<information>Du är på startsidan.</information>
+				<title lookup="pages.index.heading" />
+				<ui-culture lookup="common.ui-culture" />
+			</index>
+			<shared>
+				<layout>
+					<home>Hem</home>
+					<logotype>Logotyp</logotype>
+					<select-culture>Välj språk.</select-culture>
+					<sign-in lookup="common.sign-in" />
+					<sign-out lookup="common.sign-out" />
+					<site-name lookup="common.site-name" />
+					<toggle-navigation>Växla navigering</toggle-navigation>
+					<users lookup="common.users" />
+					<your-identity lookup="common.your-identity" />
+				</layout>
+				<validationSummary>
+					<heading>Inmatnings-fel</heading>
+					<information>Formuläret är inte ifyllt korrekt.</information>
+				</validationSummary>
+			</shared>
+		</pages>
+	</culture>
+</cultures>

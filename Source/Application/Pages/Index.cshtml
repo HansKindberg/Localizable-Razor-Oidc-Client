@@ -1,0 +1,8 @@
+﻿@page
+@model Index
+<h1>@Localizer["heading"]</h1>
+<p>@Localizer["information"]</p>
+<ul>
+	<li>@Localizer["culture"]: <span class="fw-bold">@CultureInfo.CurrentCulture</span></li>
+	<li>@Localizer["ui-culture"]: <span class="fw-bold">@CultureInfo.CurrentUICulture</span></li>
+</ul>

@@ -1,0 +1,111 @@
+<cultures>
+	<culture name="fi">
+		<common>
+			<culture>Kulttuuri</culture>
+			<sign-in>Kirjaudu sisään</sign-in>
+			<sign-out>Kirjaudu ulos</sign-out>
+			<signing-in-with>Kirjaudutaan sisään käyttäen</signing-in-with>
+			<site-name>Sovellus</site-name>
+			<ui-culture>Käyttöliittymän kulttuuri</ui-culture>
+			<users>Käyttäjät</users>
+			<your-identity>Sinun henkilöllisyytesi</your-identity>
+		</common>
+		<pages>
+			<account>
+				<accessDenied>
+					<index>
+						<heading>Pääsy kielletty</heading>
+						<information>Sinulla ei ole pääsyä resurssiin, jota yrität saavuttaa.</information>
+						<title lookup="pages.account.accessdenied.index.heading" />
+					</index>
+				</accessDenied>
+				<index>
+					<claims>Vaatimukset</claims>
+					<heading lookup="common.your-identity" />
+					<properties>Ominaisuudet</properties>
+					<title lookup="common.your-identity" />
+					<user-name>Käyttäjänimi</user-name>
+				</index>
+				<signedOut>
+					<index>
+						<heading>Kirjautunut ulos</heading>
+						<information>Olet nyt kirjautunut ulos.</information>
+						<return-to-previous-page>Palaa edelliselle sivulle.</return-to-previous-page>
+						<title lookup="pages.account.signedout.index.heading" />
+					</index>
+				</signedOut>
+				<signIn>
+					<index>
+						<form>
+							<error>
+								<invalid-credentials>&quot;{0}&quot; tai/ja &quot;{1}&quot; on väärin.</invalid-credentials>
+								<required-format>&quot;{0}&quot; on pakollinen.</required-format>
+							</error>
+							<heading>Lomake-todennus</heading>
+							<information>Kirjaudu sisään käyttäjätunnuksella ja salasanalla.</information>
+							<password>Salasana</password>
+							<username>Käyttäjänimi</username>
+						</form>
+						<heading>Kirjaudu sisään</heading>
+						<idp>
+							<heading>Duende IdentityServer -demo</heading>
+							<information>Kirjaudu sisään Duende IdentityServer -demolla.</information>
+						</idp>
+						<information>Valitse yksi seuraavista vaihtoehdoista:</information>
+						<sign-in-with>Kirjaudu sisään käyttäen</sign-in-with>
+						<title lookup="pages.account.signin.index.heading" />
+					</index>
+				</signIn>
+				<signOut>
+					<index>
+						<confirm>Kyllä</confirm>
+						<confirm-question>Haluatko kirjautua ulos?</confirm-question>
+						<heading lookup="common.sign-out" />
+						<title lookup="common.sign-out" />
+					</index>
+				</signOut>
+				<users>
+					<index>
+						<heading lookup="common.users" />
+						<information>Etsi käyttäjiä. Voit käyttää &quot;*&quot; jokerimerkkiä, kun etsit.</information>
+						<no-hit>Ei tuloksia.</no-hit>
+						<reset>Nollaa</reset>
+						<result>Tulos</result>
+						<search>Hae</search>
+						<title lookup="common.users" />
+						<user>
+							<email>Sähköposti</email>
+							<preferred-userName>Ensisijainen käyttäjänimi</preferred-userName>
+							<subject>Aihe (id)</subject>
+							<userName>Käyttäjänimi</userName>
+						</user>
+					</index>
+				</users>
+			</account>
+			<index>
+				<culture lookup="common.culture" />
+				<heading>Kotisivu</heading>
+				<information>Olet etusivulla.</information>
+				<title lookup="pages.index.heading" />
+				<ui-culture lookup="common.ui-culture" />
+			</index>
+			<shared>
+				<layout>
+					<home>Kotisivu</home>
+					<logotype>Logotyyppi</logotype>
+					<select-culture>Valitse kieli.</select-culture>
+					<sign-in lookup="common.sign-in" />
+					<sign-out lookup="common.sign-out" />
+					<site-name lookup="common.site-name" />
+					<toggle-navigation>Vaihda navigointia</toggle-navigation>
+					<users lookup="common.users" />
+					<your-identity lookup="common.your-identity" />
+				</layout>
+				<validationSummary>
+					<heading>Syöttövirhe</heading>
+					<information>Lomaketta ei ole täytetty oikein.</information>
+				</validationSummary>
+			</shared>
+		</pages>
+	</culture>
+</cultures>

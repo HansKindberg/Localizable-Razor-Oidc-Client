@@ -1,0 +1,27 @@
+﻿@page
+@model Application.Pages.Account.Index
+<h1>
+	<svg class="align-bottom text-primary" height="2.6rem" role="presentation" width="2.6rem">
+		<use xlink:href="/Style/Sprites/sprite.svg#person" />
+	</svg>
+	@Localizer["heading"]
+</h1>
+<p>@Localizer["user-name"]: <strong>@User.Identity!.Name</strong></p>
+<h2 class="h6">@Localizer["claims"]</h2>
+<ul class="list-group text-break">
+	@foreach(var claim in User.Claims.OrderBy(item => item.Type))
+	{
+		<li class="list-group-item">
+			<strong>@claim.Type:</strong> @claim.Value
+		</li>
+	}
+</ul>
+<h2 class="h6 mt-3">@Localizer["properties"]</h2>
+<ul class="list-group text-break">
+	@foreach(var property in (await HttpContext.AuthenticateAsync()).Properties!.Items.OrderBy(item => item.Key))
+	{
+		<li class="list-group-item">
+			<strong>@property.Key:</strong> @property.Value
+		</li>
+	}
+</ul>

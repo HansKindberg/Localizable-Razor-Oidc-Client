@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json.schemastore.org/launchsettings.json",
+	"profiles": {
+		"Kestrel-Windows": {
+			"applicationUrl": "https://localhost:5000",
+			"commandName": "Project",
+			"dotnetRunMessages": true,
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development",
+				// Below may cause longer startup time when running locally (only during development). If it is a problem comment it out.
+				"ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+			},
+			"launchBrowser": true
+		},
+		"Docker-Linux": {
+			"commandName": "Docker",
+			"environmentVariables": {
+				"ASPNETCORE_ENVIRONMENT": "Development",
+				// Below may cause longer startup time when running locally (only during development). If it is a problem comment it out.
+				"ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation"
+			},
+			"launchBrowser": true,
+			"launchUrl": "https://localhost:5000"
+		}
+	}
+}
